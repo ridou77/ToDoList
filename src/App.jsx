@@ -6,15 +6,15 @@ import Todos from './components/Todos'
 
 function App() {
 
-  const todos = [
+  const [todos, setTodos] = useState([
     {id:'1', label: "Faire ses devoirs"},
     {id:'2', label: "Faire l'AP2"},
     {id:'3', label: "Faire ses courses"}
-  ]
+  ])
 
   return (
     <>
-      <Todos todos={todos} />
+      <Todos todos={todos} onAdd={ajouterTache} onDelete={supprimerTache} />
     </>
   )
 }
