@@ -24,7 +24,7 @@ function Todos({todos, onAdd, onDelete}) {
         <ul>
             {todos.map(todo => (
                 <li key={todo.id}>{todo.label}
-                <button onClick={() => onDelete(todo.id)}Supprimer></button>
+                <button onClick={() => onDelete(todo.id)}>Supprimer</button>
                 </li>
             ))}
         </ul>

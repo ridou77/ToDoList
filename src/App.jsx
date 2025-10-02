@@ -12,6 +12,18 @@ function App() {
     {id:'3', label: "Faire ses courses"}
   ])
 
+  const ajouterTache = (texte) => {
+    const nouvelleTache = {
+      id: Date.now().toString(),
+      label: texte
+    };
+    setTodos([...todos, nouvelleTache]);
+  };
+
+  const supprimerTache = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id));
+  };
+
   return (
     <>
       <Todos todos={todos} onAdd={ajouterTache} onDelete={supprimerTache} />
