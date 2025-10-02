@@ -12,12 +12,14 @@ function App() {
     {id:'3', label: "Faire ses courses"}
   ])
 
+  const [nextId, setNextId] = useState(4) //4 car il y a déja trois taches en dur
   const ajouterTache = (texte) => {
     const nouvelleTache = {
-      id: Date.now().toString(),
+      id: nextId,
       label: texte
     };
     setTodos([...todos, nouvelleTache]);
+    setNextId(nextId + 1);
   };
 
   const supprimerTache = (id) => {
